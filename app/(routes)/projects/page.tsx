@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 const projects = [
