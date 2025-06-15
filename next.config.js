@@ -1,14 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static exports
-  output: 'standalone',
+  // Optimize for production deployments
+  reactStrictMode: true,
+  swcMinify: true,
   
-  // Disable image optimization as it's not needed for static exports
+  // Image optimization settings
   images: {
-    unoptimized: true,
+    domains: [],
+    formats: ['image/avif', 'image/webp'],
   },
 
-  // Add any other necessary configuration options here
+  // Environment variables that should be exposed to the browser
+  env: {
+    NEXT_PUBLIC_URL: process.env.NEXT_PUBLIC_URL || 'http://localhost:3000',
+  },
+
+  // Customize webpack config if needed
+  webpack: (config, { dev, isServer }) => {
+    // Add custom webpack config here if needed
+    return config
+  },
 }
 
 module.exports = nextConfig

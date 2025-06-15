@@ -1,14 +1,15 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { PageTransition } from "@/components/page-transition";
 
-const geist = Geist({
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -16,7 +17,8 @@ export const metadata: Metadata = {
     default: "Dweep Chande | Software Developer",
     template: "%s | Dweep Chande",
   },
-  description: "Software Developer specializing in frontend development with React, Angular, and TypeScript. View my projects and experience.",
+  description:
+    "Software Developer specializing in frontend development with React, Angular, and TypeScript. View my projects and experience.",
   keywords: [
     "Dweep Chande",
     "Software Developer",
@@ -32,7 +34,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     title: "Dweep Chande | Software Developer",
-    description: "Software Developer specializing in frontend development with React, Angular, and TypeScript",
+    description:
+      "Software Developer specializing in frontend development with React, Angular, and TypeScript",
     siteName: "Dweep Chande Portfolio",
   },
   twitter: {
@@ -53,7 +56,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={geist.className}>
+      <body className={`${inter.variable} font-sans`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
