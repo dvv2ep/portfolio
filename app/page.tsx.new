@@ -1,0 +1,27 @@
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+
+export default function Home() {
+  return (
+    <div className="container flex max-w-screen-2xl flex-col items-center justify-center py-20 text-center">
+      <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+        Hey, I&apos;m{" "}
+        <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Your Name
+        </span>
+      </h1>
+      <p className="mt-4 max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+        I&apos;m a passionate software developer focused on building innovative web applications.
+        Specializing in frontend development with modern technologies.
+      </p>
+      <div className="mt-8 flex gap-4">
+        <Button asChild>
+          <Link href="/projects">View Projects</Link>
+        </Button>
+        <Button variant="outline" asChild>
+          <Link href="/contact">Get in Touch</Link>
+        </Button>
+      </div>
+    </div>
+  )
+}
